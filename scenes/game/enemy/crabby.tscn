@@ -78,7 +78,7 @@ var _punch_sound = preload(\"res://assets/sounds/punch.mp3\")
 var _male_hurt_sound = preload(\"res://assets/sounds/male_hurt.mp3\")
 
 # Definición de parametros de física
-var _gravity = 10
+var _gravity = 0
 var _speed = 25
 # Definición de dirección de movimientos
 var _moving_left = true
@@ -143,7 +143,7 @@ func _move_idle():
 	# Aplicamos la gravidad
 	velocity.y += _gravity
 	# Aplicamos la dirección de movimiento
-	velocity.x = 0
+	velocity.x = 20
 	# Iniciamos el movimiento
 	move_and_slide()
 
