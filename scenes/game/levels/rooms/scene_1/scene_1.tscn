@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dhor7t5klwdwx"]
+[gd_scene load_steps=23 format=3 uid="uid://dhor7t5klwdwx"]
 
 [ext_resource type="TileSet" uid="uid://bx1rsqucrwm2i" path="res://assets/resources/bg_tile_set.tres" id="1_0t8t3"]
 [ext_resource type="PackedScene" uid="uid://8rbt5lmdrp0s" path="res://scenes/game/camera/camera.tscn" id="1_8l71v"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://cg4u52161cun0" path="res://assets/sprites/treasure_hunters/palm_tree_island/sprites/background/small_cloud_3.png" id="4_ruur6"]
 [ext_resource type="Texture2D" uid="uid://c4mcmly0eo8in" path="res://assets/sprites/treasure_hunters/palm_tree_island/sprites/background/small_cloud_2.png" id="5_1gi57"]
 [ext_resource type="Texture2D" uid="uid://b2a11ffyw34fs" path="res://assets/sprites/treasure_hunters/palm_tree_island/sprites/background/water_reflect_medium_01.png" id="12_aiw82"]
-[ext_resource type="Texture2D" uid="uid://dcptpykdlp5rk" path="res://assets/sprites/treasure_hunters/palm_tree_island/sprites/objects/flag/flag_01.png" id="13_amc1m"]
 [ext_resource type="PackedScene" uid="uid://bcil4n46byhj5" path="res://scenes/game/levels/objects/back_palm_tree/back_palm_tree.tscn" id="13_uwpfu"]
 [ext_resource type="PackedScene" uid="uid://c2nps502udtd6" path="res://scenes/game/levels/objects/front_palm_tree/front_palm_tree.tscn" id="14_uwyh7"]
 [ext_resource type="PackedScene" uid="uid://ca3ueo0yewjov" path="res://scenes/game/characters/main_character/main_character.tscn" id="15_ooixx"]
@@ -24,9 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://glchvmmfffqa" path="res://scenes/game/levels/areas/bomb_shop/bomb_shop.tscn" id="21_sh538"]
 [ext_resource type="PackedScene" uid="uid://dl8afnvp5w315" path="res://scenes/game/levels/objects/power_up/power_up.tscn" id="22_vr6n4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3x710"]
-size = Vector2(31, 21)
-
 [node name="Main" type="Node2D"]
 script = ExtResource("1_j3e3j")
 
@@ -36,7 +32,7 @@ autoplay = true
 bus = &"Ambient"
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(797, -103)
+position = Vector2(782, -96)
 scale = Vector2(4.02083, 6.78027)
 texture = ExtResource("1_xttku")
 
@@ -46,7 +42,7 @@ scale = Vector2(12, 3.21625)
 texture = ExtResource("2_qll5i")
 
 [node name="Water" type="Sprite2D" parent="Background"]
-position = Vector2(0.0451159, 84.8103)
+position = Vector2(-26.6114, 83.92)
 scale = Vector2(11.9972, 1.34887)
 texture = ExtResource("3_l8cec")
 
@@ -68,10 +64,6 @@ flip_h = true
 [node name="Areas" type="Node2D" parent="."]
 
 [node name="AreaNextLevel" type="Area2D" parent="Areas"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/AreaNextLevel"]
-position = Vector2(437.5, 371.5)
-shape = SubResource("RectangleShape2D_3x710")
 
 [node name="Death" parent="Areas" instance=ExtResource("16_kwprd")]
 position = Vector2(518, 538)
@@ -95,53 +87,37 @@ scale = Vector2(2, 2)
 texture = ExtResource("12_aiw82")
 
 [node name="FrontPalmTree" parent="Objects" instance=ExtResource("14_uwyh7")]
+visible = false
 z_index = 1
 position = Vector2(483, -79)
 
-[node name="FrontPalmTree4" parent="Objects" instance=ExtResource("14_uwyh7")]
-z_index = 1
-position = Vector2(-29, -78)
-
-[node name="FrontPalmTree5" parent="Objects" instance=ExtResource("14_uwyh7")]
-z_index = 1
-position = Vector2(323, -78)
-
 [node name="FrontPalmTree6" parent="Objects" instance=ExtResource("14_uwyh7")]
+visible = false
 z_index = 1
 position = Vector2(515, -109)
 
 [node name="FrontPalmTree7" parent="Objects" instance=ExtResource("14_uwyh7")]
+visible = false
 z_index = 1
 position = Vector2(739, -205)
 
-[node name="FrontPalmTree2" parent="Objects" instance=ExtResource("14_uwyh7")]
-z_index = 1
-position = Vector2(-29, -206)
-
 [node name="FrontPalmTree3" parent="Objects" instance=ExtResource("14_uwyh7")]
+visible = false
 z_index = 1
 position = Vector2(1252, -174)
 
-[node name="BackPalmTree2" parent="Objects" instance=ExtResource("13_uwpfu")]
-position = Vector2(-21, -130)
-animation = &"idle_left"
-
 [node name="BackPalmTree3" parent="Objects" instance=ExtResource("13_uwpfu")]
+visible = false
 position = Vector2(781, -148)
 animation = &"idle_left"
 
 [node name="BackPalmTree4" parent="Objects" instance=ExtResource("13_uwpfu")]
-position = Vector2(603, -134)
-
-[node name="BackPalmTree5" parent="Objects" instance=ExtResource("13_uwpfu")]
-position = Vector2(188, -64)
+visible = false
+position = Vector2(572, -95)
 
 [node name="BackPalmTree6" parent="Objects" instance=ExtResource("13_uwpfu")]
+visible = false
 position = Vector2(1339, -295)
-
-[node name="Flag" type="Sprite2D" parent="Objects"]
-position = Vector2(298, -108)
-texture = ExtResource("13_amc1m")
 
 [node name="DoorChangeScene" parent="Objects" instance=ExtResource("17_ydyba")]
 position = Vector2(1252, -135)
@@ -197,14 +173,6 @@ position = Vector2(416, 432)
 
 [node name="RedPotion2" parent="Collectibles" instance=ExtResource("20_1tp5l")]
 position = Vector2(1350, 437)
-
-[node name="PickableObject10" parent="Collectibles" instance=ExtResource("20_juf85")]
-position = Vector2(459, 471)
-animation = "blue_diamond"
-
-[node name="PickableObject11" parent="Collectibles" instance=ExtResource("20_juf85")]
-position = Vector2(132, 435)
-animation = "green_diamond"
 
 [node name="Crabby" parent="." instance=ExtResource("18_dyrn2")]
 position = Vector2(284, 500)

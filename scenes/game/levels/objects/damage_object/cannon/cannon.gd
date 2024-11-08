@@ -47,3 +47,7 @@ func _on_animated_sprite_2d_animation_finished():
 		# Disparamos otra vez
 		fire()
 		
+
+
+func _on_bg_draw():
+	pass # Replace with function body.
