@@ -81,7 +81,7 @@ var _male_hurt_sound = preload(\"res://assets/sounds/male_hurt.mp3\")
 var _gravity = 0
 var _speed = 25
 # Definición de dirección de movimientos
-var _moving_left = true
+var _moving_left = false
 # Copia de objeto que entra a colisión
 var _body: Node2D
 # Vandera de persecución
@@ -151,7 +151,7 @@ func _move_idle():
 func _on_area_2d_body_entered(body):
 	# Validamos si la colición es con el personaje principal
 	if body.is_in_group(\"player\"):
-		_stop_detection = true
+		_stop_detection = false
 		# Atacamos
 		_attack()
 		# Creamos la copia de objeto
