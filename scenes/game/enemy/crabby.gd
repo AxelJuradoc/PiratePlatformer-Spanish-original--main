@@ -55,7 +55,7 @@ var die = false
 func _ready():
 	# Seteamos la direccion de movimiento
 	if moving_direction == 'right':
-		_moving_left = false
+		_moving_left = true
 		scale.x = -scale.x
 	# Si no seteamos la animación ponemos por defecto la animación idle
 	if not animation:
